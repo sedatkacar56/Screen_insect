@@ -19,7 +19,8 @@ Quit key in every version: **Ctrl + Shift + Q**.
 | `desktop_bug_multi_v5.pyw` | v5: 12 kinds, eggs, footprints, perching on title bars, crossings, F8 swarm, double-click slam |
 | `desktop_bug_fight_man_v6.pyw` | v6: arena with real fights + the little man (sword/hammer/fists) |
 | `desktop_bug_gun_v7.pyw` | v7 (**latest**): v6 + gun with limited ammo, fewer/slower spawns |
-| `README.md`, `docs/index.html` | public README and GitHub Pages site (play guide + version history) |
+| `README.md` | public README (links the web page, how to play, versions) |
+| `docs/index.html`, `docs/game.js` | GitHub Pages site: playable BROWSER port of v7 (canvas JS, same rules) + guide + version history |
 | `VERSIONS.md` | short table of what each file includes |
 
 Naming rule the user chose: `desktop_bug_<short description>_v<N>.pyw` (description BEFORE the version number).
@@ -82,7 +83,8 @@ patch script to a file with the Write tool and run it. Test runs go faster than 
 - **GitHub Pages is not enabled yet** (needs the user: Settings -> Pages -> Deploy from branch -> `main` / `/docs`).
   Expected URL: https://sedatkacar56.github.io/Screen_insect/
 - `gh` CLI is not installed; plain `git` works. Commit author/email: Sedat Kacar / sedatkacar56@gmail.com.
-- Commit messages end with the `Co-Authored-By: Claude ...` trailer given by the harness.
+- The user decided to NOT credit Claude: do not add `Co-Authored-By: Claude` lines or similar to commits/PRs. Past
+  commits had them stripped (history rewritten and force-pushed on request).
 
 ## Known issues / ideas not done
 - First click of a gun double-click still fires one bullet (can't know it's a double-click yet).
@@ -91,3 +93,10 @@ patch script to a file with the Write tool and run it. Test runs go faster than 
 - Bugs vs. bugs balance is only lightly tuned (see duel tests); tweak `hp/atk/aggr` in `SPECS` if the user complains.
 - Not implemented (offered earlier, user said "do all" then moved on): sounds beyond hit beeps, per-monitor support.
 - Ideas the user might like next: man picks up health, more weapons, bullet limit pickups, score counter.
+
+## Web version (docs/game.js)
+JavaScript/canvas port of v7 (7 bug kinds: beetle, cockroach, spider, centipede, mantis, scorpion, frog; no tiny bugs).
+Exports `ScreenInsect` (`start(canvas, hooks)`, `World`, `Insect`, `Man`, `SPECS`, `WEAPONS`) and also works under Node
+(`require('./docs/game.js')`, then `setCtx(fakeCtx)`) which is how it was tested headless. Keep its balance/rules in sync
+with `desktop_bug_gun_v7.pyw` when changing either. Weapon keys in the browser: 1-4, Q or F9. It was NOT visually checked
+in a real browser by Claude (only logic-tested in Node), so ask the user how it looks.

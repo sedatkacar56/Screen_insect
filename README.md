@@ -4,7 +4,15 @@ Bugs that walk around on top of your real Windows desktop. Started as a small pr
 
 Clicks pass through the empty areas, so your other apps keep working underneath.
 
-## How to play
+## Play in your browser
+
+**https://sedatkacar56.github.io/Screen_insect/**
+
+The page has a playable browser version of v7 (code in `docs/game.js`): bugs fight, a little man follows your mouse, and you click to attack with a sword, hammer, fists or gun. It is the same game, but it runs inside the page. To get bugs walking on your real desktop, use the Python files below.
+
+(Page not loading? In the repo go to Settings, then Pages, choose branch `main` and folder `/docs`.)
+
+## How to play on your desktop
 
 1. Install **Python 3** from [python.org](https://www.python.org/downloads/) (tick **"Add python.exe to PATH"**). Windows only, nothing else to install.
 2. Download the file you want from this repo.
@@ -70,6 +78,6 @@ Every file has a settings block at the top. In v7 you can change, for example, `
 - Your clicks still reach the window under the cursor, so fight over an empty part of the desktop.
 - Stop it with Ctrl + Shift + Q. Backup: end `pythonw.exe` in Task Manager.
 
-## Play page
+## Files for the web page
 
-A short guide is also available as a web page (GitHub Pages) from the `docs/` folder of this repo.
+`docs/index.html` is the page (guide plus the playable game) and `docs/game.js` is the browser version of v7.
