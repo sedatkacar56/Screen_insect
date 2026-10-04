@@ -451,3 +451,6 @@ if __name__ == "__main__":
     main()
 
 That is the only file. The headless test script I used is not needed to run the prank. To run it from a terminal instead of double-clicking, use pythonw desktop_bug.pyw, or python desktop_bug.pyw if you want to see any errors.
+
+---
+NOTE FOR THE NEXT CLAUDE: this file is the old v1 summary. The full, current project notes (v1 to v7, how it works, how the user likes to work, git state) are in CLAUDE.md in this folder. Read that first.
